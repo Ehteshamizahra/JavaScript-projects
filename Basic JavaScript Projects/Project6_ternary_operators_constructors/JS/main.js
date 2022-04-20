@@ -50,15 +50,16 @@ function example() {
     +me.birthday_year+" and your birthday is on "+you.birthday_day
     +"/"+you.birthday_month+"/"+you.birthday_year+".";//Reurn a message when the event is triggered
 }
+//Example of nested function
 function my_func() {
-    document.getElementById("counting").innerHTML=count();
-    function count(){
-        var starting_point=9;
-        function plus_one() {
-            starting_point +=1;
+    document.getElementById("counting").innerHTML=count();//Return the result of teh count() function when the event is triggered
+    function count(){ //Nested function 1
+        var starting_point=9; //Initiate a variable
+        function plus_one() { //Nested function 2
+            starting_point +=1;//Increment teh variable when function is executed
         }
         plus_one();
-        return starting_point;
+        return starting_point;//Return the resultant variable
     }
 }
 

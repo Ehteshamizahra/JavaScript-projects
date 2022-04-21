@@ -45,7 +45,7 @@ function fixPoint_func() {
 //Primitive value of string
 function primitive_func() {
     var a="First & Second round of the game";//define a variable
-    var d=a.valueOf();//search for an element in the variables
+    var d=a.valueOf();//return primitive value of string
     document.getElementById("primitive_value").innerHTML=d;//return the variable
 }
 

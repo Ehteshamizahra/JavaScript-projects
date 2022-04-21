@@ -1,5 +1,5 @@
 
-let slideIndex=-1;
+let slideIndex=1;
 //initiate a function 
 showSlides(slideIndex);
 //define the function triggered by prev/next arrow

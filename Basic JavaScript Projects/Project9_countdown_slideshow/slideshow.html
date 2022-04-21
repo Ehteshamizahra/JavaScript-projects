@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Slideshow</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <script src="JS/slideshow.js"></script>
+        <link rel="stylesheet" type="text/css" href="CSS/slideshow.css">
+    </head>
+    <body>
+        <!--Slide show images and teh content-->
+        <div class="slideshow-container">
+            <!--image 1 in the slide show-->
+            <div class="mySlides fade">
+                <div class="numbertext">1/3</div>
+                <img src="images/image_1.jpg">
+                <div class="text">River</div>
+            </div>
+            <!--End Image 1-->
+            <!--image 2 in the slide show-->
+            <div class="mySlides fade">
+                <div class="numbertext">2/3</div>
+                <img src="images/image_2.jpg">
+                <div class="text">Lakeside</div>
+            </div>
+            <!--End Image 2-->
+            <!--image 3 in the slide show-->
+            <div class="mySlides fade">
+                <div class="numbertext">3/3</div>
+                <img src="images/image_3.jpg">
+                <div class="text">Mountains</div>
+            </div>
+            <!--End Image 3-->
+
+            <a class="prev" onclick="plusSlide(-1)">❮</a>       
+            <a class="next" onclick="plusSlide(1)">❯</a>
+        </div>
+
+        <br>
+        <!--Slide show control dots-->
+        <div class="style_points">
+            <span class="dot" onclick="currentSlide(1)"></span>
+            <span class="dot" onclick="currentSlide(2)"></span>
+            <span class="dot" onclick="currentSlide(3)"></span>              
+        </div>
+
+    </body>
+</html>

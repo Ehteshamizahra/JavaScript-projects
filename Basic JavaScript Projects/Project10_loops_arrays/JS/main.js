@@ -82,7 +82,7 @@ let grade={//Define an object with properties and method
 };
 document.getElementById("grade_object").innerHTML=grade.method();//output the function's return
 
-//Example of breaka nd continue
+//Example of break and continue
 let text1=""
 for (let i=0; i<=10;i++){
     if (i==5){break;}

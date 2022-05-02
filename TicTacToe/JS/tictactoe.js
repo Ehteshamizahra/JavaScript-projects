@@ -26,6 +26,7 @@ function placeXorO(squareNumber) {
         
         audio('./media/place.mp3');//plays placement sound
         
+       
         if(activePlayer==='O'){
             disableClick();//when it is computer turn disable the UI          
             setTimeout(function(){computerTurn();},1000); //wait for 1 second before computer places image and enables click
@@ -33,19 +34,20 @@ function placeXorO(squareNumber) {
         }
         return true;//neeed for the computerTrun function
     }
-}
-//computer to randomley select a square in computer's turn
-function computerTurn() {
-    let success=false;//initialise the booleaon variable
-    let pickASquare;//store a random number from 0-8 in this variable
-    while(!success){//allows the while loop to keep trying if a square is already selected
-        pickASquare=String(Math.floor(Math.random()*9));//A random number between 0-8 is selected
-        if(placeXorO(pickASquare)){//If the random number evaluated retunrs true, the square hasn't been selected yet
-            placeXorO(pickASquare);//call the function
-            success=true;//change the booleaon and ends the loop
-        };
+    function computerTurn() {
+        let success=false;//initialise the booleaon variable
+        let pickASquare;//store a random number from 0-8 in this variable
+        while(!success){//allows the while loop to keep trying if a square is already selected
+            pickASquare=String(Math.floor(Math.random()*9));//A random number between 0-8 is selected
+            if(placeXorO(pickASquare)){//If the random number evaluated retunrs true, the square hasn't been selected yet
+                placeXorO(pickASquare);//call the function
+                success=true;//change the booleaon and ends the loop
+            };
+        }
     }
 }
+//computer to randomley select a square in computer's turn
+
 
 //this function pairs the selectedSquares array to search for win conditions.
 //drawWinLine function is called to draw line if condition is met

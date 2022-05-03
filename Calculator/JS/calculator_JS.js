@@ -1,9 +1,28 @@
+//High level scope:Define buttons for operators, decimal sign, all-clear sign, equal sign and operands i.e.0-9.
+//Listen to which button is pressed. Keep track of 1)isplay value, 2)First operand, 3) wait for second operand (as a boolean) &4)operator.
+//Eachtime an operand i.e. 0-9, is pressed, check if this is the first operand or second operand using the 'wait for second operand' boolean.
+//if this is the second operand doesn't exist (if the wait for second operand was true) then set the display value as that digit and set the 'wait for second 
+//operand' boolean to false. Else If this is the first operand, then check if the display value is '0' then just replace '0' whith that digit 
+//that was presses. If not '0' then concatinate the string value.
+//If a decimal sign '.' is pressed, check if this is an accidental press of decimal. This is done by checking if we are waiting for the second operand 
+//(wait for second operand is true). terminate teh function if boolean is true. If not then concatinate the decimal with the digit 
+//on the dicplay value. 
+//If an operator is pressed, convert the display value to a number. Check f the operator value already exist and the wait for second operand is true 
+//then update the operator with the new operator and terminate the function. The check if this is teh first operand, so assign the display value
+//to the first operand variable. else i.e if teh first value exist and the display value is showing the second value, then use the 
+//first operand and the second operand (second operand is displayed) and perform the calculation (using a function that defines the 
+//operators functionality). Once calculated, set the decimal place then remove any trailing 0's, display it and asign the first 
+//value as the result. at this point, asign the wait for second operand as true, and update the operator variable.
+//In a function, define the operators functionality which also rund teh calculation between two values.
+// In a function, define how to reset the calculator if teh all-clear is pressed. In here, just set the 1)isplay value, 2)First operand,
+// 3) wait for second operand (as a boolean) &4)operator to their default value.
+
 //create an object to keep track of values
 const Calculator={
     Display_value:"0",//initialise the display value to 0
     First_Operand:null,//hold  the first operand for any experessions, set to null for now
     Wait_Second_Operand:false,//check wether the second operand has been input
-    operator:null,//Hold teh operator
+    operator:null,//Hold the operator
 };
 //This modifies values each time a button is clicked
 function Input_Digit(digit){
@@ -20,7 +39,7 @@ function Input_Digit(digit){
 }
 //this section handles decimal points
 function Input_Decimal(dot){
-    if(Calculator.Wait_Second_Operand===true)return;//ensure that accidental clicking of teh decimal point doesnt cause bug in the program
+    if(Calculator.Wait_Second_Operand===true)return;//ensure that accidental clicking of the decimal point doesnt cause bug in the program
     if(!Calculator.Display_value.includes(dot)){
         Calculator.Display_value+=dot;//if the display_value does not contain a decimal point we want to add a decimal point
     }
@@ -82,7 +101,7 @@ function Handle_Operator(Next_Operator) {
         if(!target.matches('button')){//if the element that was clicked on is not a button, exit the function
             return;
         }
-        if(target.classList.contains('operator')){
+        if(target.classList.contains('operator')){//To check if an element contains a class, you use the contains() method of the classList property of the element
             Handle_Operator(target.value);
             Update_Display();
             return;

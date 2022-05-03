@@ -1,0 +1,65 @@
+body{
+    background-color: darkslategray;
+}
+h1{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #b4786b;
+}
+h3{
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    color:#c7cac1;
+}
+div{
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    color: rgb(228, 216, 216);
+}
+#menuBG {
+    width: 600px;
+    height: 470px;
+    margin: 10px auto;
+}
+#frmMenu {
+    width: 600px;
+    height: 200px;
+}
+#totalPrice{
+    width: 200px;
+    height: 190px;
+    margin: 0 auto;
+    float: right;
+}
+.left {
+    width: 200px;
+    height: 200px;
+    float: left;
+}
+.right {
+    width: 200px;
+    height: 200px;
+    float: right;
+}
+.center{
+    width: 200px;
+    height: 200px;
+    float: left;
+
+}
+#showText {
+    width: 200px;
+    height: 190px;
+    margin: 0 auto;
+    float: left;
+}
+#cart {
+    top:0;
+    margin: 0px auto;
+    width: 400px;
+    height: 200px;
+}
+#btnOrder{
+    margin: 10px 0px 0px 200px;
+    width: 100px;
+    height: 40px;
+    text-align: center;
+}
+

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>React example</title>
+        <script src="react.js"></script>
+        <script src="react-dom.js"></script>
+    </head>
+    <body>
+        <div id="My_React_Code"></div>
+        <script>
+            var Counter=React.createClass({//create component class
+                render: function(){
+                    var time_Passed=Math.round(this.props.time_Passed/100);
+                    var seconds_Passed=time_Passed/10+(time_Passed % 10 ? '':'.0');
+                    var text='My React code started running ' + seconds_Passed + ' seconds ago!';
+                    return React.DOM.p(null,text);
+                }
+            });
+
+            var counter_Factory=React.createFactory(Counter);//generate a factory (object that can render other objects)
+            var start_Countering=new Date().getTime();
+            setInterval(function(){//a method that evaluates an experssion at specified intervals
+                ReactDOM.render(//render a React Component
+                    counter_Factory({time_Passed:new Date().getTime()-start_Countering}),
+                    document.getElementById('My_React_Code')
+                );
+            },50);
+        </script>
+
+    </body>
+</html>
